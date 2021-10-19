@@ -1,0 +1,107 @@
+#navegador{
+    display: flex;
+    background-color: #cf6338;
+    justify-content: center;
+    align-items: center;
+    /*margin: 0 auto;*/
+}
+
+#navegador > a.active {
+    color:black;
+}
+
+#navegador > a {
+    padding: .8rem 3rem;
+    color: white;
+}
+
+.title_caja {
+    color: #cf6338;
+}
+
+footer {
+    text-align: center;
+    padding: 3px;
+    background-color: rgb(37, 13, 4);
+    color: white;
+}
+
+.caja {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.visible {
+    display: none;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+/*div catalogo de articulos*/
+.catalogo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+
+  /*div de cada item del catalogo*/
+.catalogo {
+    display: auto;
+    padding: 10px;
+    
+}
+
+/*contorno div catalogo-item*/
+.catalogo :hover {
+    border: 1px solid rgba(122, 120, 120, 0.473);
+    box-shadow: 5px 5px 8px rgba(140, 140, 141, 0.349);
+    
+}
+
+/*botton añadir articulos */
+.anadirButton {
+    background-color: #cf6338;
+    color: white;
+    border: 2px solid #cf6338;
+}
+
+/*grid para carrito*/
+#contenedor_cesta{
+    display: flex;
+
+}
+
+#cesta{
+    display: flex;
+}
+
+.cesta-item {
+    display: auto;
+}
+
+.btnEliminar {
+    background-color: red;
+    color: white;
+    border: 2px solid red;
+}
+
+.contador_carrito{
+    background: #5EA226;
+    border-radius: 0.8em;
+    -moz-border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;
+    color: #ffffff;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1.6em;
+    margin-right: 15px;
+    text-align: center;
+    width: 1.6em; 
+}

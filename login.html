@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script type="text/javascript" src="funciones.js"></script>
+        <link rel="stylesheet" href="./src/login.css">
+    </head>
+    <body>
+    <div class="cajonera">
+        <nav  class="nav">
+            <a id = "user" class="nav-link active" href="#" onclick="verPestania(event, 'active' );">Usuario/Contraseña</a>
+            <!--<a id = "cert" class="nav-link" href="#" onclick="verPestania(event, 'active' );">Certificado ACCV/DNI-e</a>-->
+            <a id="registro" class="nav-link" href="#" onclick="verPestania(event, 'active' );">Nuevo Usuario</a>
+          </nav>
+          <hr>
+        <div id="caja_user" class="caja_user caja">
+            <h3>Inicio de sesión</h3>
+            <form action="home.php" method="GET">
+                <div class="form-group">
+                    <label for="correo">Correo electrónico: </label><br>
+                    <input type="text" name="correo" id="correo" placeholder="correo">
+                </div>
+                <div class="form-group">
+                    <label for="clave">Contraseña: </label><br>
+                    <input type="password" name="clave" id="clave" placeholder="clave">
+                </div>
+                
+                <input type="button" class="form-control-button" id="entrar" value="Entrar" onclick="comprobar_sesion();">
+            </form>
+        </div>
+        <div id="caja_registro" class="caja_registro caja visible">
+            <h3>Registro</h3>
+            <form action="registro.php" method="POST" id="formulario-registro">
+                <div>
+                    <label for="user">Usuario: </label><br>
+                    <input type="text" name="user" id="user" placeholder="Usuario">
+                </div>
+                <div>
+                    <label for="correo1">Correo electrónico: </label><br>
+                    <input type="text" name="correo1" id="correo1" placeholder="Correo">
+                </div>
+                <div>
+                    <label for="clave1">Contraseña: </label><br>
+                    <input type="password" name="clave1" id="clave1" placeholder="Clave">
+                </div>
+                <br>
+                <input type="button" class="form-control-button" id="registrar" value="Registrar" onclick="registrar_user();">
+            </form>
+        </div>
+    </div>
+    </body>
+</html>

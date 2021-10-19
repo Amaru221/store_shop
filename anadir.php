@@ -3,6 +3,7 @@ require_once "sesiones.php";
 require_once "leer_configuracion.php";
 comprobar_sesion();
 
+
 $res = leer_config(dirname(__FILE__)."./src/configuracion.xml", dirname(__FILE__)."./src/configuracion.xsd");
 $bd = new PDO($res[0], $res[1], $res[2]);
 

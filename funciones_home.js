@@ -52,6 +52,14 @@ function cargar_articulos(){
             arrayArticulos.forEach( function(producto) {
                 let item = document.createElement("div");
                 item.className = 'catalogo-item';
+                item.onclick = function(event){
+                    if(event.target == this){
+                        location.href = "articulo.php?codProd="+producto.codProd;
+                    }else{
+                        return;
+                    }
+                    
+                }
                 let img = document.createElement("img");
                 img.src = producto.src;
                 img.atl = producto.nombre;
@@ -269,11 +277,6 @@ function realizarPedido(){
     }).done(function(data) {
         if(data == 1){
             alert("Pedido realizado con éxito. En breves recibira un correo electrónico");
-            /*let contenedor = document.getElementById("contenedor_cesta");
-            contenedor.removeChild(contenedor.firstChild);
-            let contenedorCesta = document.getElementById("contenedor_first_cesta");
-            contenedorCesta.removeChild(contenedorCesta.firstChild);
-            contenedorCesta.removeChild(contenedorCesta.lastChild);*/
             $("#contador_carrito").text(0);
             cargar_carrito();
         }else if(data == 0){

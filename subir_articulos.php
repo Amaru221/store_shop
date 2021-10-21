@@ -3,7 +3,7 @@ require "sesiones.php";
 require_once "leer_configuracion.php";
 comprobar_sesion();
 
-if($_SESSION['usuario'] === "admin"){
+if($_SESSION['usuario']['usuario'] === "admin"){
 
     if($_SERVER['REQUEST_METHOD'] === "POST" and isset($_POST['name']) and isset($_POST['desc']) && isset($_POST['peso']) and isset($_POST['stock']) and isset($_POST['precio'])){
         $tiempo = time();

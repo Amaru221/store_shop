@@ -263,14 +263,24 @@ function eliminar_articulo_cesta($codProd, unidades){
 function realizarPedido(){
     $.ajax({
         method: "GET",
-        url: "realizarPedido.php",
-        data: { 
+        url: "realizar_pedido.php",
+        data: {      
         }
     }).done(function(data) {
         if(data == 1){
             alert("Pedido realizado con éxito. En breves recibira un correo electrónico");
-        }else{
-            alert('No se pudo eliminar el producto');
+            /*let contenedor = document.getElementById("contenedor_cesta");
+            contenedor.removeChild(contenedor.firstChild);
+            let contenedorCesta = document.getElementById("contenedor_first_cesta");
+            contenedorCesta.removeChild(contenedorCesta.firstChild);
+            contenedorCesta.removeChild(contenedorCesta.lastChild);*/
+            $("#contador_carrito").text(0);
+            cargar_carrito();
+        }else if(data == 0){
+            alert('No se pudo realizar el pedido');
+        }else if(data==2){
+            alert("error enviando correos");
+
         }
         
     });

@@ -39,5 +39,4 @@ function leer_configCorreo($nombre, $esquema){
 }
 
 
-
 ?>

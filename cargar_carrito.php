@@ -9,11 +9,11 @@ function cargar_productos($codigosProductos){
 	$bd = new PDO($res[0], $res[1], $res[2]);
 	$texto_in = implode(",", $codigosProductos);
 	$ins = "select * from producto where codProd in($texto_in)";
-	$resul = $bd->query($ins);	
+	$resul = $bd->query($ins);
 	if (!$resul) {
 		return FALSE;
 	}
-	return $resul;	
+	return $resul;
 }
 
 if($_SERVER['REQUEST_METHOD'] === "GET"){

@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] === "GET" and isset($_GET['correo']) and isset($_G
 
     $correo = $_GET['correo'];
     $clave = $_GET['clave'];
-    $ins = "select nombre, clave from usuario where correo = '$correo'";
+    $ins = "select id, nombre, clave from usuario where correo = '$correo'";
     $resul = $bd->query($ins);
 
     if(!$resul){
@@ -17,11 +17,13 @@ if($_SERVER['REQUEST_METHOD'] === "GET" and isset($_GET['correo']) and isset($_G
         echo 0;
     }else{
             $salida = $resul->fetch();
-            $user = $salida[0];
-            $passwordEncrypt = $salida[1];
+            $id = $salida[0];
+            $user = $salida[1];
+            $passwordEncrypt = $salida[2];
             if(password_verify($clave, $passwordEncrypt)){
-                $_SESSION['usuario'] = $user;
-                $_SESSION['correo'] = $correo;
+                $_SESSION['usuario']['id'] = $id;
+                $_SESSION['usuario']['usuario'] = $user;
+                $_SESSION['usuario']['correo'] = $correo;
                 $_SESSION['carrito'] = [];
                 echo 1;
             }else{
